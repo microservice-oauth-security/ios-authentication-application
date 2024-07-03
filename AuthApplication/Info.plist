@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AUTH_URL</key>
+	<string>$(AUTH_URL)</string>
+	<key>DEMO_SERVICE_URL</key>
+	<string>$(DEMO_SERVICE_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -45,6 +49,17 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>GIDClientID</key>
+	<string>937997268189-6vn55bhm3ej2svpdm4fh69e4ik570hon.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.937997268189-6vn55bhm3ej2svpdm4fh69e4ik570hon</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

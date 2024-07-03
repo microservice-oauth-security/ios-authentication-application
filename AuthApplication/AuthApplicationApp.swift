@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct AuthApplicationApp: App {
+    @AppStorage("accessToken") var accessToken = ""
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if(accessToken == "")
+            {
+                AuthScreen()
+            }else{
+                HomeScreen()
+            }
         }
     }
 }
