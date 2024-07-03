@@ -16,12 +16,12 @@ struct SignUpView: View {
             Group{
                 TextField("UserName",
                           text: $signUpViewModel.userName)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .padding(.top, 20)
-                    .onChange(of: signUpViewModel.userName, perform: { _ in
-                        signUpViewModel.userNameError = nil
-                    })
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .padding(.top, 20)
+                .onChange(of: signUpViewModel.userName, perform: { _ in
+                    signUpViewModel.userNameError = nil
+                })
                 Divider()
                 if let error = signUpViewModel.userNameError {
                     Text(error).foregroundColor(.red)
@@ -30,10 +30,10 @@ struct SignUpView: View {
             Group{
                 SecureField("Password",
                             text: $signUpViewModel.password)
-                    .padding(.top, 20)
-                    .onChange(of: signUpViewModel.password, perform: { _ in
-                        signUpViewModel.passwordError = nil
-                    })
+                .padding(.top, 20)
+                .onChange(of: signUpViewModel.password, perform: { _ in
+                    signUpViewModel.passwordError = nil
+                })
                 Divider()
                 if let error = signUpViewModel.passwordError {
                     Text(error).foregroundColor(.red)
@@ -42,10 +42,11 @@ struct SignUpView: View {
             Group{
                 SecureField("Confirm Password",
                             text: $signUpViewModel.confirmPassword)
-                    .padding(.top, 20)
-                    .onChange(of: signUpViewModel.confirmPassword, perform: { _ in
-                        signUpViewModel.confirmPasswordError = nil
-                    })
+                .textContentType(.newPassword)
+                .padding(.top, 20)
+                .onChange(of: signUpViewModel.confirmPassword, perform: { _ in
+                    signUpViewModel.confirmPasswordError = nil
+                })
                 Divider()
                 if let error = signUpViewModel.confirmPasswordError {
                     Text(error).foregroundColor(.red)
@@ -54,12 +55,12 @@ struct SignUpView: View {
             Spacer().frame(height: 30)
             Button(action: signUp,
                    label: {
-                    Text("Sign Up")
-                        .frame(maxWidth: .infinity, minHeight: 50)
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                   })
+                Text("Sign Up")
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            })
             Spacer().frame(height: 20)
             HStack{
                 Text("Already a Member?")

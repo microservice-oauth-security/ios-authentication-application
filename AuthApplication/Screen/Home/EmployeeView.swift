@@ -11,7 +11,6 @@ struct EmployeeView: View {
     @ObservedObject var employeeViewModel : EmployeeViewModel
     @ObservedObject var homeScreenModel : HomeScreenModel
     static let logoutDelay = 5
-    @State private var logoutDelayState = logoutDelay
     var body: some View {
         VStack{
             Button(action: fetchEmployees, label : {
@@ -66,7 +65,6 @@ struct EmployeeView: View {
                 }else if let apiError = apiError{
                     if(apiError.httpStatusCode == 401)
                     {
-                        employeeViewModel.error = "Your Authorization Expired!!! You will be logged out in \(logoutDelayState) seconds"
                         Task {
                             await delayAndLogout()
                         }
@@ -92,7 +90,7 @@ struct EmployeeView: View {
         //(1 second = 1_000_000_000 nanoseconds)
         for i in 1...EmployeeView.logoutDelay{
             DispatchQueue.main.async{
-                logoutDelayState = i
+                employeeViewModel.error = "Your Authorization Expired!!! You will be logged out in \(EmployeeView.logoutDelay + 1 - i) seconds..."
             }
             try? await Task.sleep(nanoseconds: 1_000_000_000 )
         }

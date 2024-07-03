@@ -18,7 +18,7 @@ struct HomeScreen: View {
                     HStack{
                         Text("Welcome \(homeScreenModel.userName ?? "")")
                         Spacer()
-                        Button(action: {}, label:{
+                        Button(action: logout, label:{
                             Text("Logout")
                                 .frame(minWidth : 100, minHeight: 50)
                                 .foregroundColor(.red)
@@ -76,7 +76,7 @@ struct HomeScreen: View {
     
     func getUserClaim() -> UserClaim?{
         var base64 : String = String(accessToken.split(separator: ".")[1])
-        // need to pad this base64 value, as Data(base64Encoded:) returns nil if it is missing
+        // need to pad this base64 value, as Data(base64Encoded:) returns nil if padding is missing
         let length = Double(base64.lengthOfBytes(using: String.Encoding.utf8))
         let requiredLength = 4 * ceil(length/4.0)
         let paddingLength = requiredLength - length
