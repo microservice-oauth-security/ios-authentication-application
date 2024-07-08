@@ -16,4 +16,4 @@ Once the user authenticates successfully from the authentication screen, user wi
 
 
 # Video Reference
-For detailed video explanation of this project please visit my YouTube channel [CodeWithAnish](https://www.youtube.com/@CodeWithAnish)
+For detailed video explanation of this project please visit my YouTube channel [CodeWithAnish](https://youtu.be/KRElLPk4P6c)
